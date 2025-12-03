@@ -38,6 +38,9 @@
       "views/*": [
         "./src/views/*"
       ],
+      "assets/*": [
+        "./src/assets/*"
+      ]
     }
   },
   "include": [

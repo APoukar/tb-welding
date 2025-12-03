@@ -13,8 +13,8 @@ function Menu() {
             <Box>
             </Box>
             <Box display="flex" gap={6}>
-                <MenuItem text="O mně" />
                 <MenuItem text="Služby" />
+                <MenuItem text="O mně" />
                 <MenuItem text="Kontakt" />
             </Box>
             <MenuButton text="Napište mi" href={getEmailLink()} />
