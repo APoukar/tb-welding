@@ -1,6 +1,7 @@
 import './App.css'
 import TbThemeProvider from 'components/TbThemeProvider'
 import AboutMe from 'views/AboutMe'
+import Contacts from 'views/Contacts'
 import Menu from 'views/Menu'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <TbThemeProvider>
         <Menu />
         <AboutMe />
+        <Contacts />
       </TbThemeProvider>
     </>
   )
