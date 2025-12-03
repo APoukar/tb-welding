@@ -10,14 +10,16 @@ function Menu() {
     }
     return (
         <Box display="flex" justifyContent="space-between" margin={4}>
-            <Box>
+            <Box flex={1}>
             </Box>
-            <Box display="flex" gap={6}>
+            <Box display="flex" gap={6} border={0.5} borderColor="#90caf9" borderRadius={8} padding={1.5}>
                 <MenuItem text="Služby" />
                 <MenuItem text="O mně" />
                 <MenuItem text="Kontakt" />
             </Box>
-            <MenuButton text="Napište mi" href={getEmailLink()} />
+            <Box flex={1} display="flex" justifyContent="flex-end">
+                <MenuButton text="Napište mi" href={getEmailLink()} />
+            </Box>
         </Box>
     )
 }
