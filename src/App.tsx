@@ -1,6 +1,6 @@
 import './App.css'
-import TbThemeProvider from './components/TbThemeProvider'
-import Menu from './views/Menu'
+import TbThemeProvider from 'components/TbThemeProvider'
+import Menu from 'views/Menu'
 
 function App() {
   return (

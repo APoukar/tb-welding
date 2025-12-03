@@ -1,6 +1,6 @@
 import Button from "@mui/material/Button";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import type { ILinkButtonProps } from "../types/IButtonProps";
+import type { ILinkButtonProps } from "types/IButtonProps";
 
 export default function MenuButton({ text, href }: ILinkButtonProps) {
     return (

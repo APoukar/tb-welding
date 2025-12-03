@@ -1,5 +1,5 @@
 import { Button } from "@mui/material";
-import type { IButtonProps } from "../types/IButtonProps";
+import type { IButtonProps } from "types/IButtonProps";
 
 export default function MenuItem({ text }: IButtonProps) {
     return (

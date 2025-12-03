@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import MenuButton from "../components/TbMenuButton";
-import MenuItem from "../components/TbMenuItem";
+import MenuButton from "components/TbMenuButton";
+import MenuItem from "components/TbMenuItem";
 
 function Menu() {
     function getEmailLink() {
