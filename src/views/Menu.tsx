@@ -1,17 +1,23 @@
-import { Box, Button } from "@mui/material";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import MessageMeButton from "../components/MessageMeButton";
+import { Box } from "@mui/material";
+import MenuButton from "../components/TbMenuButton";
+import MenuItem from "../components/TbMenuItem";
 
 function Menu() {
+    function getEmailLink() {
+        const email = "adam@poukar.net";
+        const subject = "Poptávka služeb";
+        return `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+    }
     return (
         <Box display="flex" justifyContent="space-between" margin={4}>
             <Box>
-                Tomáš Bičej
             </Box>
-            <Box>
-                Menu
+            <Box display="flex" gap={6}>
+                <MenuItem text="O mně" />
+                <MenuItem text="Služby" />
+                <MenuItem text="Kontakt" />
             </Box>
-            <MessageMeButton />
+            <MenuButton text="Napište mi" href={getEmailLink()} />
         </Box>
     )
 }
