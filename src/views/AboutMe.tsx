@@ -2,15 +2,17 @@ import { Typography, Box, Grow } from "@mui/material";
 import ScrollTrigger from "@ppasmik/react-scroll-trigger";
 import welding from "assets/welding.jpg"
 import TbHeadline from "components/TbHeadline";
-import { useState } from "react";
+import { HeadlineContext } from "contexts/HeadlineContext";
+import { useContext, useState } from "react";
 
 export default function AboutMe() {
     const [isInView, setIsInView] = useState(false);
+    const { aboutMe } = useContext(HeadlineContext)
 
     return (
         <>
             <ScrollTrigger onEnter={() => setIsInView(true)} onExit={() => setIsInView(false)}>
-                <TbHeadline heading="O mně" />
+                <TbHeadline heading="O mně" ref={aboutMe}/>
                 <Box display="flex" alignItems="stretch" sx={{ margin: "auto 10%" }}>
                     <Grow in={isInView} timeout={2000}>
                         <Box flex={1} sx={{ pr: 2 }}>

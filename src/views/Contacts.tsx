@@ -1,5 +1,7 @@
 import { Link, styled, Typography, type LinkProps, type TypographyProps } from "@mui/material";
 import TbHeadline from "components/TbHeadline";
+import { HeadlineContext } from "contexts/HeadlineContext";
+import { useContext } from "react";
 
 const ContactTypography = styled(Typography)<TypographyProps>(({ theme }) => ({
     textAlign: 'center',
@@ -13,9 +15,10 @@ const ContactLink = styled(Link)<LinkProps>(() => ({
 }))
 
 export default function Contacts() {
+    const { contacts } = useContext(HeadlineContext)
     return (
         <>
-            <TbHeadline heading="Kontakt" />
+            <TbHeadline heading="Kontakt" ref={contacts} />
             <ContactTypography>
                 TB Welding - Tomáš Bičej
             </ContactTypography>

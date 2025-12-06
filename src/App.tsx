@@ -1,3 +1,4 @@
+import { HeadlineProvider } from 'contexts/HeadlineContext'
 import './App.css'
 import TbThemeProvider from 'components/TbThemeProvider'
 import AboutMe from 'views/AboutMe'
@@ -8,9 +9,11 @@ function App() {
   return (
     <>
       <TbThemeProvider>
-        <Menu />
-        <AboutMe />
-        <Contacts />
+        <HeadlineProvider>
+          <Menu />
+          <AboutMe />
+          <Contacts />
+        </HeadlineProvider>
       </TbThemeProvider>
     </>
   )
