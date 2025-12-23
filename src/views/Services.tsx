@@ -1,9 +1,8 @@
 import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
 import ScrollTrigger from "@ppasmik/react-scroll-trigger";
-import { LeftBox, MainBox, RightBox, TypographyBox } from "components/TbBox";
-import TbHeadline from "components/TbHeadline";
-import TbSubHeadline from "components/TbSubHeadline";
+import { LeftBox, MainBox, RightBox } from "components/TbBox";
+import TbHeadline, { TbH3, TbH4 } from "components/TbHeadline";
 import { CenteredBodyTypography } from "components/TbTypography";
 import { HeadlineContext } from "contexts/HeadlineContext";
 import { useContext, useState } from "react";
@@ -24,13 +23,14 @@ export default function Services() {
                 a kontrolních specifikací.
             </CenteredBodyTypography>
 
-            {/* UT – Ultrazvuková kontrola (Level II) */}
+            {/* UT – Ultrazvuková kontrola */}
             <ScrollTrigger onEnter={() => setIsUTInView(true)} onExit={() => setIsUTInView(false)}>
                 <MainBox padding="4% 0 0 0">
                     <Grow in={isUTInView} timeout={2000}>
                         <LeftBox>
                             <Box padding={3}>
-                                <TbSubHeadline heading="UT – Ultrazvuková kontrola (Level II)" />
+                                <TbH3 heading="UT – Ultrazvuková kontrola" />
+                                <TbH4 heading="Level II" />
                                 <Typography fontWeight="800">Rozsah:</Typography>
                                 <Typography component="ul">
                                     <Typography component="li">
@@ -72,7 +72,7 @@ export default function Services() {
                 </MainBox>
             </ScrollTrigger>
 
-            {/* MT – Magnetická prášková metoda (Level II) */}
+            {/* MT – Magnetická prášková metoda */}
             <ScrollTrigger onEnter={() => setIsMTInView(true)} onExit={() => setIsMTInView(false)}>
                 <MainBox padding="4% 0 0 0">
                     <Grow in={isMTInView} timeout={3000}>
@@ -89,7 +89,8 @@ export default function Services() {
                     <Grow in={isMTInView} timeout={2000}>
                         <RightBox>
                             <Box padding={3}>
-                                    <TbSubHeadline heading="MT – Magnetická prášková metoda (Level II)" />
+                                <TbH3 heading="MT – Magnetická prášková metoda" />
+                                <TbH4 heading="Level II" />
                                 <Typography fontWeight="800">Rozsah:</Typography>
                                 <Typography component="ul">
                                     <Typography component="li">
@@ -120,13 +121,14 @@ export default function Services() {
                 </MainBox>
             </ScrollTrigger>
 
-            {/* VT – Vizuální kontrola (Level II) */}
+            {/* VT – Vizuální kontrola */}
             <ScrollTrigger onEnter={() => setIsVTInView(true)} onExit={() => setIsVTInView(false)}>
                 <MainBox padding="4% 0 0 0">
                     <Grow in={isVTInView} timeout={2000}>
                         <LeftBox>
                             <Box padding={3}>
-                                    <TbSubHeadline heading="VT – Vizuální kontrola (Level II)" />
+                                <TbH3 heading="VT – Vizuální kontrola" />
+                                <TbH4 heading="Level II" />
                                 <Typography fontWeight="800">Rozsah:</Typography>
                                 <Typography component="ul">
                                     <Typography component="li">
