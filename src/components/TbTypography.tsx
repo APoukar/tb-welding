@@ -20,6 +20,7 @@ export const TbH3 = styled(Typography)<TypographyProps>(() => ({
 
 export const TbH4 = styled(Typography)<TypographyProps>(({ theme }) => ({
     color: theme.palette.text.secondary,
+    paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(3),
     fontSize: '1.2em',
     fontStyle: 'italic'

@@ -12,6 +12,7 @@ export default function Services() {
     const [isUTInView, setIsUTInView] = useState(false);
     const [isMTInView, setIsMTInView] = useState(false);
     const [isVTInView, setIsVTInView] = useState(false);
+    const [isWeldingInView, setIsWeldingInView] = useState(false);
     const { services } = useContext(HeadlineContext);
     return (
         <>
@@ -164,6 +165,45 @@ export default function Services() {
                                 borderRadius={8}
                                 sx={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
                             />
+                        </RightBox>
+                    </Grow>
+                </MainBox>
+            </ScrollTrigger>
+
+            {/* Svářečské práce */}
+            <ScrollTrigger onEnter={() => setIsWeldingInView(true)} onExit={() => setIsWeldingInView(false)}>
+                <MainBox padding="4% 0 0 0">
+                    <Grow in={isWeldingInView} timeout={3000}>
+                        <LeftBox>
+                            <Box
+                                component="img"
+                                src={welding}
+                                alt="welding"
+                                borderRadius={8}
+                                sx={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+                            />
+                        </LeftBox>
+                    </Grow>
+                    <Grow in={isWeldingInView} timeout={2000}>
+                        <RightBox>
+                            <Box padding={3}>
+                                <TbH3 variant="h3">Svářečské práce</TbH3>
+                                <TbH4 variant="h4">Svařování dle EN ISO 9606-1 – metody 111 a 135</TbH4>
+                                <BodyTypography component="ul">
+                                    <BodyTypography component="li">
+                                        svařování ocelových konstrukcí dle výkresové dokumentace
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
+                                        zakázková výroba a úpravy svařenců
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
+                                        montáže a opravy ocelových konstrukcí
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
+                                        práce na stavbách, mostních objektech a průmyslových celcích
+                                    </BodyTypography>
+                                </BodyTypography>
+                            </Box>
                         </RightBox>
                     </Grow>
                 </MainBox>
