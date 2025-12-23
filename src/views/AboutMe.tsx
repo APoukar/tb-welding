@@ -1,4 +1,4 @@
-import { Typography, Box, Grow } from "@mui/material";
+import { Box, Grow } from "@mui/material";
 import ScrollTrigger from "@ppasmik/react-scroll-trigger";
 import welding from "assets/welding.jpg"
 import { LeftBox, MainBox, RightBox, TypographyBox } from "components/TbBox";

@@ -18,7 +18,7 @@ export default function Services() {
     return (
         <>
             <TbHeadline heading="Služby" ref={services} />
-            <CenteredBodyTypography padding="20% auto">
+            <CenteredBodyTypography margin="auto 10%">
                 Kontroly provádím jako certifikovaný technik NDT Level II – multisektor
                 dle ČSN EN ISO 9712:2022, v souladu s požadavky norem, projektové dokumentace
                 a kontrolních specifikací.
@@ -29,7 +29,7 @@ export default function Services() {
                 <MainBox padding="4% 0 0 0">
                     <Grow in={isUTInView} timeout={2000}>
                         <LeftBox>
-                            <TypographyBox>
+                            <Box padding={3}>
                                 <TbSubHeadline heading="UT – Ultrazvuková kontrola (Level II)" />
                                 <Typography fontWeight="800">Rozsah:</Typography>
                                 <Typography component="ul">
@@ -55,7 +55,7 @@ export default function Services() {
                                         ocelové konstrukce, tlakové i netlakové díly dle dokumentace
                                     </Typography>
                                 </Typography>
-                            </TypographyBox>
+                            </Box>
                         </LeftBox>
                     </Grow>
                     <Grow in={isUTInView} timeout={3000}>
@@ -88,8 +88,8 @@ export default function Services() {
                     </Grow>
                     <Grow in={isMTInView} timeout={2000}>
                         <RightBox>
-                            <TypographyBox>
-                                <TbSubHeadline heading="MT – Magnetická prášková metoda (Level II)" />
+                            <Box padding={3}>
+                                    <TbSubHeadline heading="MT – Magnetická prášková metoda (Level II)" />
                                 <Typography fontWeight="800">Rozsah:</Typography>
                                 <Typography component="ul">
                                     <Typography component="li">
@@ -114,7 +114,7 @@ export default function Services() {
                                         feromagnetické oceli
                                     </Typography>
                                 </Typography>
-                            </TypographyBox>
+                            </Box>
                         </RightBox>
                     </Grow>
                 </MainBox>
@@ -125,8 +125,8 @@ export default function Services() {
                 <MainBox padding="4% 0 0 0">
                     <Grow in={isVTInView} timeout={2000}>
                         <LeftBox>
-                            <TypographyBox>
-                                <TbSubHeadline heading="VT – Vizuální kontrola (Level II)" />
+                            <Box padding={3}>
+                                    <TbSubHeadline heading="VT – Vizuální kontrola (Level II)" />
                                 <Typography fontWeight="800">Rozsah:</Typography>
                                 <Typography component="ul">
                                     <Typography component="li">
@@ -151,7 +151,7 @@ export default function Services() {
                                         montáže a opravy
                                     </Typography>
                                 </Typography>
-                            </TypographyBox>
+                            </Box>
                         </LeftBox>
                     </Grow>
                     <Grow in={isVTInView} timeout={3000}>

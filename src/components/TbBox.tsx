@@ -2,7 +2,7 @@ import { Box, styled, type BoxProps } from "@mui/material";
 
 export const MainBox = styled(Box)<BoxProps>(() => ({
     display: 'flex',
-    alignItems: 'stretch',
+    alignItems: 'center',
     margin: 'auto 10%'
 }));
 
