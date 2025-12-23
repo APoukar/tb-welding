@@ -2,12 +2,11 @@ import Box from "@mui/material/Box";
 import Grow from "@mui/material/Grow";
 import ScrollTrigger from "@ppasmik/react-scroll-trigger";
 import { LeftBox, MainBox, RightBox } from "components/TbBox";
-import TbHeadline, { TbH3, TbH4 } from "components/TbHeadline";
-import { CenteredBodyTypography } from "components/TbTypography";
+import TbHeadline from "components/TbHeadline";
+import { BodyTypography, CenteredBodyTypography, ListHeadline, TbH3, TbH4 } from "components/TbTypography";
 import { HeadlineContext } from "contexts/HeadlineContext";
 import { useContext, useState } from "react";
 import welding from "assets/welding.jpg"
-import { Typography } from "@mui/material";
 
 export default function Services() {
     const [isUTInView, setIsUTInView] = useState(false);
@@ -29,32 +28,32 @@ export default function Services() {
                     <Grow in={isUTInView} timeout={2000}>
                         <LeftBox>
                             <Box padding={3}>
-                                <TbH3 heading="UT – Ultrazvuková kontrola" />
-                                <TbH4 heading="Level II" />
-                                <Typography fontWeight="800">Rozsah:</Typography>
-                                <Typography component="ul">
-                                    <Typography component="li">
+                                <TbH3 variant="h3">UT – Ultrazvuková kontrola</TbH3>
+                                <TbH4 variant="h4">Level II</TbH4>
+                                <ListHeadline>Rozsah:</ListHeadline>
+                                <BodyTypography component="ul">
+                                    <BodyTypography component="li">
                                         vnitřní vady svarů (necelistvosti, póry, vměstky)
-                                    </Typography>
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
                                         nedokonalé provaření
-                                    </Typography>
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
                                         měření tloušťky materiálu
-                                    </Typography>
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
                                         vyhodnocení dle norem
-                                    </Typography>
-                                </Typography>
-                                <Typography fontWeight="800" padding="4% 0 0 0">Použití:</Typography>
-                                <Typography component="ul">
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                </BodyTypography>
+                                <ListHeadline padding="4% 0 0 0">Použití:</ListHeadline>
+                                <BodyTypography component="ul">
+                                    <BodyTypography component="li">
                                         plechy, profily, trubky
-                                    </Typography>
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
                                         ocelové konstrukce, tlakové i netlakové díly dle dokumentace
-                                    </Typography>
-                                </Typography>
+                                    </BodyTypography>
+                                </BodyTypography>
                             </Box>
                         </LeftBox>
                     </Grow>
@@ -89,32 +88,32 @@ export default function Services() {
                     <Grow in={isMTInView} timeout={2000}>
                         <RightBox>
                             <Box padding={3}>
-                                <TbH3 heading="MT – Magnetická prášková metoda" />
-                                <TbH4 heading="Level II" />
-                                <Typography fontWeight="800">Rozsah:</Typography>
-                                <Typography component="ul">
-                                    <Typography component="li">
+                                <TbH3 variant="h3">MT – Magnetická prášková metoda</TbH3>
+                                <TbH4 variant="h4">Level II</TbH4>
+                                <ListHeadline>Rozsah:</ListHeadline>
+                                <BodyTypography component="ul">
+                                    <BodyTypography component="li">
                                         trhliny
-                                    </Typography>
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
                                         vady svarových spojů
-                                    </Typography>
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
                                         povrchové a podpovrchové diskontinuity
-                                    </Typography>
-                                </Typography>
-                                <Typography fontWeight="800" padding="4% 0 0 0">Použití:</Typography>
-                                <Typography component="ul">
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                </BodyTypography>
+                                <ListHeadline padding="4% 0 0 0">Použití:</ListHeadline>
+                                <BodyTypography component="ul">
+                                    <BodyTypography component="li">
                                         svarové spoje
-                                    </Typography>
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
                                         základní materiál
-                                    </Typography>
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
                                         feromagnetické oceli
-                                    </Typography>
-                                </Typography>
+                                    </BodyTypography>
+                                </BodyTypography>
                             </Box>
                         </RightBox>
                     </Grow>
@@ -127,32 +126,32 @@ export default function Services() {
                     <Grow in={isVTInView} timeout={2000}>
                         <LeftBox>
                             <Box padding={3}>
-                                <TbH3 heading="VT – Vizuální kontrola" />
-                                <TbH4 heading="Level II" />
-                                <Typography fontWeight="800">Rozsah:</Typography>
-                                <Typography component="ul">
-                                    <Typography component="li">
+                                <TbH3 variant="h3">VT – Vizuální kontrola</TbH3>
+                                <TbH4 variant="h4">Level II</TbH4>
+                                <ListHeadline>Rozsah:</ListHeadline>
+                                <BodyTypography component="ul">
+                                    <BodyTypography component="li">
                                         vzhled a geometrie svarů
-                                    </Typography>
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
                                         povrchové vady
-                                    </Typography>
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
                                         značení a shoda s výkresovou dokumentací a normami
-                                    </Typography>
-                                </Typography>
-                                <Typography fontWeight="800" padding="4% 0 0 0">Použití:</Typography>
-                                <Typography component="ul">
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                </BodyTypography>
+                                <ListHeadline padding="4% 0 0 0">Použití:</ListHeadline>
+                                <BodyTypography component="ul">
+                                    <BodyTypography component="li">
                                         svary
-                                    </Typography>
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
                                         konstrukční celky
-                                    </Typography>
-                                    <Typography component="li">
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
                                         montáže a opravy
-                                    </Typography>
-                                </Typography>
+                                    </BodyTypography>
+                                </BodyTypography>
                             </Box>
                         </LeftBox>
                     </Grow>

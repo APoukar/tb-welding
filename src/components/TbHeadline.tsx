@@ -1,6 +1,5 @@
 import { Typography } from "@mui/material";
-import type { IBaseHeadlineProps, IHeadlineProps } from "types/IHeadlineProps";
-import { BodyTypography } from "./TbTypography";
+import type { IHeadlineProps } from "types/IHeadlineProps";
 
 export default function TbHeadline({ heading, ref }: IHeadlineProps) {
     return (
@@ -9,21 +8,5 @@ export default function TbHeadline({ heading, ref }: IHeadlineProps) {
                 {heading}
             </Typography>
         </div>
-    )
-}
-
-export function TbH3({ heading }: IBaseHeadlineProps) {
-    return (
-        <Typography variant="h3" fontWeight="500" fontSize="1.7em">
-            {heading}
-        </Typography>
-    )
-}
-
-export function TbH4({ heading }: IBaseHeadlineProps) {
-    return (
-        <BodyTypography variant="h4" paddingTop={1} paddingBottom={3} fontSize="1.2em" fontStyle="italic">
-            {heading}
-        </BodyTypography>
     )
 }
