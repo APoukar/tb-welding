@@ -4,6 +4,7 @@ import TbThemeProvider from 'components/TbThemeProvider'
 import AboutMe from 'views/AboutMe'
 import Contacts from 'views/Contacts'
 import Menu from 'views/Menu'
+import Services from 'views/Services'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <TbThemeProvider>
         <HeadlineProvider>
           <Menu />
+          <Services />
           <AboutMe />
           <Contacts />
         </HeadlineProvider>
