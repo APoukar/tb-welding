@@ -1,12 +1,8 @@
-import { Link, styled, Typography, type LinkProps, type TypographyProps } from "@mui/material";
+import { Link, styled, type LinkProps } from "@mui/material";
 import TbHeadline from "components/TbHeadline";
+import { CenteredBodyTypography } from "components/TbTypography";
 import { HeadlineContext } from "contexts/HeadlineContext";
 import { useContext } from "react";
-
-const ContactTypography = styled(Typography)<TypographyProps>(({ theme }) => ({
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
 
 const ContactLink = styled(Link)<LinkProps>(() => ({
     textAlign: 'center',
@@ -19,27 +15,27 @@ export default function Contacts() {
     return (
         <>
             <TbHeadline heading="Kontakt" ref={contacts} />
-            <ContactTypography>
+            <CenteredBodyTypography>
                 TB Welding - Tomáš Bičej
-            </ContactTypography>
-            <ContactTypography>
+            </CenteredBodyTypography>
+            <CenteredBodyTypography>
                 Ostrava – Poruba
-            </ContactTypography>
+            </CenteredBodyTypography>
             <ContactLink href="tel:+420775492685" margin="1% 0 0 0">
                 +420 775 492 685
             </ContactLink>
             <ContactLink href="mailto:tbwelding@seznam.cz">
                 tbwelding@seznam.cz
             </ContactLink>
-            <ContactTypography>
+            <CenteredBodyTypography>
                 IČO: 000000000
-            </ContactTypography>
-            <ContactTypography margin="1% 0 0 0">
+            </CenteredBodyTypography>
+            <CenteredBodyTypography margin="1% 0 0 0">
                 Zakázky po celé ČR - po domluvě
-            </ContactTypography>
-            <ContactTypography>
+            </CenteredBodyTypography>
+            <CenteredBodyTypography>
                 Možnost realizace zakázek i v zahraničí
-            </ContactTypography>
+            </CenteredBodyTypography>
         </>
     )
 }
