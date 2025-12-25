@@ -37,11 +37,10 @@ jobs:
       env:
         CI: true
     
-    - name: Upload coverage artifact
-      uses: actions/upload-artifact@v4
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v4
       with:
-        name: coverage-report
-        path: ./coverage/lcov.info
+        files: ./coverage/lcov.info
       
     - name: Build
       run: npm run build
