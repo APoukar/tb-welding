@@ -4,14 +4,16 @@ import TbThemeProvider from 'components/TbThemeProvider'
 import AboutMe from 'views/AboutMe'
 import Contacts from 'views/Contacts'
 import Services from 'views/Services'
-import Header from 'views/Header'
+import Welcome from 'views/Welcome'
+import Menu from 'views/Menu'
 
 function App() {
   return (
     <>
       <TbThemeProvider>
         <HeadlineProvider>
-          <Header />
+          <Welcome />
+          <Menu />
           <Services />
           <AboutMe />
           <Contacts />
