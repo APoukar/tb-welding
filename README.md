@@ -2,6 +2,8 @@
 
 [![Node.js CI](https://github.com/APoukar/tb-welding/actions/workflows/ci.yml/badge.svg)](https://github.com/APoukar/tb-welding/actions/workflows/ci.yml)
 
+[![Coverage Status](https://codecov.io/gh/APoukar/tb-welding/branch/main/graph/badge.svg)](https://codecov.io/gh/APoukar/tb-welding)
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
