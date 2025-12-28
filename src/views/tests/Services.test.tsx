@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { HeadlineContext } from 'contexts/HeadlineContext';
+import { GetHeadlineContextMock } from 'utils/TestUtils';
 import Services from 'views/Services';
 import { vi } from 'vitest';
 
@@ -16,11 +17,7 @@ describe('Services', () => {
   it('renders main heading and intro paragraph', () => {
     const servicesRef = { current: null } as any;
     render(
-        <HeadlineContext.Provider value={{
-            services: servicesRef,
-            contacts: null,
-            aboutMe: null
-        }}>
+        <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
         <Services />
       </HeadlineContext.Provider>
     );
@@ -31,11 +28,7 @@ describe('Services', () => {
   it('renders all service headings', () => {
     const servicesRef = { current: null } as any;
     render(
-        <HeadlineContext.Provider value={{
-            services: servicesRef,
-            contacts: null,
-            aboutMe: null
-        }}>
+        <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
         <Services />
       </HeadlineContext.Provider>
     );
@@ -48,11 +41,7 @@ describe('Services', () => {
   it('renders images with accessible alt text for each section', () => {
     const servicesRef = { current: null } as any;
     render(
-        <HeadlineContext.Provider value={{
-            services: servicesRef,
-            aboutMe: null,
-            contacts: null
-        }}>
+        <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
         <Services />
       </HeadlineContext.Provider>
     );
@@ -67,11 +56,7 @@ describe('Services', () => {
   it('renders list items for UT section', () => {
     const servicesRef = { current: null } as any;
     render(
-        <HeadlineContext.Provider value={{
-            services: servicesRef,
-            contacts: null,
-            aboutMe: null
-        }}>
+        <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
         <Services />
       </HeadlineContext.Provider>
     );

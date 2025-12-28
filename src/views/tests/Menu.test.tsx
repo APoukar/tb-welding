@@ -2,15 +2,12 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import { vi } from 'vitest';
 import { HeadlineContext } from 'contexts/HeadlineContext';
 import Menu from 'views/Menu';
+import { GetHeadlineContextMock } from 'utils/TestUtils';
 
 describe('Menu', () => {
     it('renders menu items and action button', () => {
         render(
-            <HeadlineContext.Provider value={{
-                aboutMe: null,
-                contacts: null,
-                services: null
-            }}>
+            <HeadlineContext.Provider value={GetHeadlineContextMock()}>
                 <Menu />
             </HeadlineContext.Provider>
         );
@@ -24,11 +21,7 @@ describe('Menu', () => {
 
     it('renders mailto link with encoded subject', () => {
         render(
-            <HeadlineContext.Provider value={{
-                aboutMe: null,
-                contacts: null,
-                services: null
-            }}>
+            <HeadlineContext.Provider value={GetHeadlineContextMock()}>
                 <Menu />
             </HeadlineContext.Provider>
         );
@@ -50,11 +43,7 @@ describe('Menu', () => {
         } as any;
 
         render(
-            <HeadlineContext.Provider value={{
-                aboutMe: null,
-                contacts: null,
-                services: servicesRef
-            }}>
+            <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
                 <Menu />
             </HeadlineContext.Provider>
         );
@@ -71,11 +60,7 @@ describe('Menu', () => {
         } as any;
 
         render(
-            <HeadlineContext.Provider value={{
-                aboutMe: aboutRef,
-                contacts: null,
-                services: null
-            }}>
+            <HeadlineContext.Provider value={GetHeadlineContextMock({ aboutMe: aboutRef })}>
                 <Menu />
             </HeadlineContext.Provider>
         );
@@ -92,11 +77,7 @@ describe('Menu', () => {
         } as any;
 
         render(
-            <HeadlineContext.Provider value={{
-                aboutMe: null,
-                contacts: contactsRef,
-                services: null
-            }}>
+            <HeadlineContext.Provider value={GetHeadlineContextMock({ contacts: contactsRef })}>
                 <Menu />
             </HeadlineContext.Provider>
         );

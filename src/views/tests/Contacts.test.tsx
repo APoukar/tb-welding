@@ -1,16 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import { HeadlineContext } from 'contexts/HeadlineContext';
+import { GetHeadlineContextMock } from 'utils/TestUtils';
 import Contacts from 'views/Contacts';
 
 describe('Contacts', () => {
     it('renders heading and contact lines', () => {
         const contactsRef = { current: null } as any;
         render(
-            <HeadlineContext.Provider value={{
-                contacts: contactsRef,
-                aboutMe: null,
-                services: null
-            }}>
+            <HeadlineContext.Provider value={GetHeadlineContextMock({ contacts: contactsRef })}>
                 <Contacts />
             </HeadlineContext.Provider>
         );
@@ -24,11 +21,7 @@ describe('Contacts', () => {
     it('renders phone and email links with correct hrefs', () => {
         const contactsRef = { current: null } as any;
         render(
-            <HeadlineContext.Provider value={{
-                contacts: contactsRef,
-                aboutMe: null,
-                services: null
-            }}>
+            <HeadlineContext.Provider value={GetHeadlineContextMock({ contacts: contactsRef })}>
                 <Contacts />
             </HeadlineContext.Provider>
         );

@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { HeadlineContext } from 'contexts/HeadlineContext';
+import { GetHeadlineContextMock } from 'utils/TestUtils';
 import AboutMe from 'views/AboutMe';
 import { vi } from 'vitest';
 
@@ -16,11 +17,7 @@ describe('AboutMe', () => {
   it('renders heading and profile paragraphs', () => {
     const aboutRef = { current: null } as any;
     render(
-        <HeadlineContext.Provider value={{
-            aboutMe: aboutRef,
-            contacts: null,
-            services: null
-        }}>
+        <HeadlineContext.Provider value={GetHeadlineContextMock({ aboutMe: aboutRef })}>
         <AboutMe />
       </HeadlineContext.Provider>
     );
@@ -32,11 +29,7 @@ describe('AboutMe', () => {
   it('renders image with accessible alt', () => {
     const aboutRef = { current: null } as any;
     render(
-        <HeadlineContext.Provider value={{
-            aboutMe: aboutRef,
-            contacts: null,
-            services: null
-        }}>
+        <HeadlineContext.Provider value={GetHeadlineContextMock({ aboutMe: aboutRef })}>
         <AboutMe />
       </HeadlineContext.Provider>
     );
