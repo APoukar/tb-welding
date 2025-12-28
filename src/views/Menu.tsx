@@ -5,7 +5,7 @@ import { HeadlineContext } from "contexts/HeadlineContext";
 import { useContext } from "react";
 
 function Menu() {
-    const { aboutMe, contacts, services } = useContext(HeadlineContext);
+    const { aboutMe, contacts, services, qualification } = useContext(HeadlineContext);
 
     function getEmailLink() {
         const email = "tbwelding@seznam.cz";
@@ -20,7 +20,7 @@ function Menu() {
             <Box display="flex" gap={6} border={0.5} borderColor="#90caf9" borderRadius={8} padding={1.5}>
                 <MenuItem text="Služby" ref={services} />
                 <MenuItem text="O mně" ref={aboutMe} />
-                <MenuItem text="Kvalifikace" ref={null} />
+                <MenuItem text="Kvalifikace" ref={qualification} />
                 <MenuItem text="Kontakt" ref={contacts} />
             </Box>
             <Box flex={1} display="flex" justifyContent="flex-end">

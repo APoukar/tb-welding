@@ -7,7 +7,7 @@ export default function MenuItem({ text, ref }: IButtonProps) {
         if (!ref || !ref.current) {
             return;
         }
-        ref.current.scrollIntoView();
+        ref.current.scrollIntoView({ behavior: 'smooth' });
     }
 
     return (

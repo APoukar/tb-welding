@@ -6,6 +6,7 @@ import Contacts from 'views/Contacts'
 import Services from 'views/Services'
 import Welcome from 'views/Welcome'
 import Menu from 'views/Menu'
+import Qualification from 'views/Qualification'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Menu />
           <Services />
           <AboutMe />
+          <Qualification />
           <Contacts />
         </HeadlineProvider>
       </TbThemeProvider>

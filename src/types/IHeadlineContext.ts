@@ -4,4 +4,5 @@ export interface IHeadlineContext {
     services: HeadlineRef;
     aboutMe: HeadlineRef;
     contacts: HeadlineRef;
+    qualification: HeadlineRef;
 }
