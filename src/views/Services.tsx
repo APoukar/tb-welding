@@ -7,6 +7,9 @@ import { BodyTypography, CenteredBodyTypography, ListHeadline, TbH3, TbH4 } from
 import { HeadlineContext } from "contexts/HeadlineContext";
 import { useContext, useState } from "react";
 import welding from "assets/welding.jpg"
+import ut from "assets/ut.jpg"
+import mt from "assets/mt.jpg"
+import vt from "assets/vt.jpg"
 
 export default function Services() {
     const [isUTInView, setIsUTInView] = useState(false);
@@ -62,10 +65,15 @@ export default function Services() {
                         <RightBox>
                             <Box
                                 component="img"
-                                src={welding}
-                                alt="welding"
+                                src={ut}
+                                alt="Ultrazvuková kontrola"
                                 borderRadius={8}
-                                sx={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+                                sx={{
+                                    width: "100%",
+                                    height: { xs: '220px', sm: '300px', md: '360px' },
+                                    display: "block",
+                                    objectFit: "cover"
+                                }}
                             />
                         </RightBox>
                     </Grow>
@@ -79,10 +87,15 @@ export default function Services() {
                         <LeftBox>
                             <Box
                                 component="img"
-                                src={welding}
-                                alt="welding"
+                                src={mt}
+                                alt="Magnetická prášková metoda"
                                 borderRadius={8}
-                                sx={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+                                sx={{
+                                    width: "100%",
+                                    height: { xs: '220px', sm: '300px', md: '360px' },
+                                    display: "block",
+                                    objectFit: "cover"
+                                }}
                             />
                         </LeftBox>
                     </Grow>
@@ -160,10 +173,15 @@ export default function Services() {
                         <RightBox>
                             <Box
                                 component="img"
-                                src={welding}
-                                alt="welding"
+                                src={vt}
+                                alt="Vizuální kontrola"
                                 borderRadius={8}
-                                sx={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+                                sx={{
+                                    width: "100%",
+                                    height: { xs: '220px', sm: '300px', md: '360px' },
+                                    display: "block",
+                                    objectFit: "cover"
+                                }}
                             />
                         </RightBox>
                     </Grow>
@@ -178,9 +196,14 @@ export default function Services() {
                             <Box
                                 component="img"
                                 src={welding}
-                                alt="welding"
+                                alt="Svařování"
                                 borderRadius={8}
-                                sx={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+                                sx={{
+                                    width: "100%",
+                                    height: { xs: '220px', sm: '300px', md: '360px' },
+                                    display: "block",
+                                    objectFit: "cover"
+                                }}
                             />
                         </LeftBox>
                     </Grow>

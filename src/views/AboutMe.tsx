@@ -1,6 +1,6 @@
 import { Box, Grow } from "@mui/material";
 import ScrollTrigger from "@ppasmik/react-scroll-trigger";
-import welding from "assets/welding.jpg"
+import tb from "assets/tb.jpg"
 import { LeftBox, MainBox, RightBox, TypographyBox } from "components/TbBox";
 import TbHeadline from "components/TbHeadline";
 import { BodyTypography } from "components/TbTypography";
@@ -14,16 +14,21 @@ export default function AboutMe() {
     return (
         <>
             <ScrollTrigger onEnter={() => setIsInView(true)} onExit={() => setIsInView(false)}>
-                <TbHeadline heading="O mně" ref={aboutMe}/>
+                <TbHeadline heading="O mně" ref={aboutMe} />
                 <MainBox>
                     <Grow in={isInView} timeout={2000}>
                         <LeftBox>
                             <Box
                                 component="img"
-                                src={welding}
-                                alt="welding"
+                                src={tb}
+                                alt="Tomáš Bičej"
                                 borderRadius={8}
-                                sx={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }}
+                                sx={{
+                                    width: "100%",
+                                    height: { xs: '220px', sm: '300px', md: '360px' },
+                                    display: "block",
+                                    objectFit: "cover"
+                                }}
                             />
                         </LeftBox>
                     </Grow>

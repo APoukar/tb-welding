@@ -33,9 +33,9 @@ describe('AboutMe', () => {
         <AboutMe />
       </HeadlineContext.Provider>
     );
-    const img = screen.getByRole('img', { name: /welding/i });
+    const img = screen.getByRole('img', { name: /Tomáš Bičej/i });
     expect(img).toBeInTheDocument();
-    expect(img).toHaveAttribute('alt', 'welding');
+    expect(img).toHaveAttribute('alt', 'Tomáš Bičej');
     expect(img).toHaveAttribute('src');
   });
 });

@@ -17,7 +17,7 @@ describe('Services', () => {
   it('renders main heading and intro paragraph', () => {
     const servicesRef = { current: null } as any;
     render(
-        <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
+      <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
         <Services />
       </HeadlineContext.Provider>
     );
@@ -28,7 +28,7 @@ describe('Services', () => {
   it('renders all service headings', () => {
     const servicesRef = { current: null } as any;
     render(
-        <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
+      <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
         <Services />
       </HeadlineContext.Provider>
     );
@@ -38,25 +38,49 @@ describe('Services', () => {
     expect(screen.getByText(/Svářečské práce/)).toBeInTheDocument();
   });
 
-  it('renders images with accessible alt text for each section', () => {
+  it('renders images with accessible alt text for UT', () => {
     const servicesRef = { current: null } as any;
     render(
-        <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
+      <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
         <Services />
       </HeadlineContext.Provider>
     );
-    const images = screen.getAllByRole('img', { name: /welding/i });
-    expect(images.length).toBeGreaterThanOrEqual(4);
-    images.forEach((img) => {
-      expect(img).toHaveAttribute('alt', 'welding');
-      expect(img).toHaveAttribute('src');
-    });
+    const image = screen.getByRole('img', { name: /Ultrazvuková kontrola/i });
+    expect(image).toBeInTheDocument();
+    expect(image).toHaveAttribute('alt', 'Ultrazvuková kontrola');
+    expect(image).toHaveAttribute('src');
+  });
+
+  it('renders images with accessible alt text for MT', () => {
+    const servicesRef = { current: null } as any;
+    render(
+      <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
+        <Services />
+      </HeadlineContext.Provider>
+    );
+    const image = screen.getByRole('img', { name: /Magnetická prášková metoda/i });
+    expect(image).toBeInTheDocument();
+    expect(image).toHaveAttribute('alt', 'Magnetická prášková metoda');
+    expect(image).toHaveAttribute('src');
+  });
+
+  it('renders images with accessible alt text for VT', () => {
+    const servicesRef = { current: null } as any;
+    render(
+      <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
+        <Services />
+      </HeadlineContext.Provider>
+    );
+    const image = screen.getByRole('img', { name: /Vizuální kontrola/i });
+    expect(image).toBeInTheDocument();
+    expect(image).toHaveAttribute('alt', 'Vizuální kontrola');
+    expect(image).toHaveAttribute('src');
   });
 
   it('renders list items for UT section', () => {
     const servicesRef = { current: null } as any;
     render(
-        <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
+      <HeadlineContext.Provider value={GetHeadlineContextMock({ services: servicesRef })}>
         <Services />
       </HeadlineContext.Provider>
     );

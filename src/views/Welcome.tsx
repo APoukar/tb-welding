@@ -1,13 +1,13 @@
 import { Typography } from "@mui/material"
 import Box from "@mui/material/Box"
-import welding from "assets/welding.jpg"
+import hero from "assets/hero.jpg"
 
 export default function Welcome() {
     return (
         <Box sx={{ minHeight: "83vh" }}>
             <Box
                 component="img"
-                src={welding}
+                src={hero}
                 alt="welding"
                 sx={{ width: "100%", height: "83vh", objectFit: "cover", filter: "brightness(0.3)" }}
             />
