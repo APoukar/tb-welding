@@ -31,7 +31,7 @@ export default function Qualification() {
         <>
             <TbHeadline heading="Kvalifikace" ref={qualification} />
             <CenteredBodyTypography>Platné certifikáty a svářečské průkazy jsou k dispozici na vyžádání.</CenteredBodyTypography>
-            <MainBox sx={{ alignItems: "flex-start" }}>
+            <MainBox sx={{ alignItems: "flex-start", margin: "auto" }}>
                 <LeftBox>
                     <TypographyBox>
                         <IconBox>
