@@ -18,22 +18,6 @@ export default function AboutMe() {
                 <MainBox>
                     <Grow in={isInView} timeout={2000}>
                         <LeftBox>
-                            <Box
-                                component="img"
-                                src={tb}
-                                alt="Tomáš Bičej"
-                                borderRadius={8}
-                                sx={{
-                                    width: "100%",
-                                    height: { xs: '220px', sm: '300px', md: '360px' },
-                                    display: "block",
-                                    objectFit: "cover"
-                                }}
-                            />
-                        </LeftBox>
-                    </Grow>
-                    <Grow in={isInView} timeout={3000}>
-                        <RightBox>
                             <TypographyBox>
                                 <BodyTypography>
                                     Jmenuji se Tomáš Bičej a jsem certifikovaný technik NDT (UT, MT, VT – Level II),
@@ -47,6 +31,22 @@ export default function AboutMe() {
                                     Zakládám si na kvalitně odvedené práci, technické přesnosti, dodržování norem a spolehlivosti.
                                 </BodyTypography>
                             </TypographyBox>
+                        </LeftBox>
+                    </Grow>
+                    <Grow in={isInView} timeout={3000}>
+                        <RightBox>
+                            <Box
+                                component="img"
+                                src={tb}
+                                alt="Tomáš Bičej"
+                                borderRadius={8}
+                                sx={{
+                                    width: "100%",
+                                    height: { xs: '220px', sm: '300px', md: '360px' },
+                                    display: "block",
+                                    objectFit: "cover"
+                                }}
+                            />
                         </RightBox>
                     </Grow>
                 </MainBox>
