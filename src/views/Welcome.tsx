@@ -16,7 +16,7 @@ export default function Welcome() {
                 fontWeight={700}
                 lineHeight={1.5}
                 sx={{
-                    fontSize: { xs: '1.5em', sm: '2.5em', md: '4em' },
+                    fontSize: { xs: '2em', sm: '2.5em', md: '4em' },
                     position: "absolute",
                     top: "25%",
                     left: "50%",
@@ -30,7 +30,7 @@ export default function Welcome() {
             <Typography
                 variant="h2"
                 sx={{
-                    fontSize: { xs: '1.2em', sm: '1.8em', md: '2.5em' },
+                    fontSize: { xs: '1.5em', sm: '1.8em', md: '2.5em' },
                     position: "absolute",
                     top: { xs: "38%", sm: "40%" },
                     left: "50%",
