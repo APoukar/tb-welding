@@ -84,7 +84,7 @@ export default function Services() {
             <ScrollTrigger onEnter={() => setIsMTInView(true)} onExit={() => setIsMTInView(false)}>
                 <MainBox padding="4% 0 0 0">
                     <Grow in={isMTInView} timeout={3000}>
-                        <LeftBox>
+                        <LeftBox sx={{ order: { xs: 2, sm: 0 } }}>
                             <Box
                                 component="img"
                                 src={mt}
@@ -192,7 +192,7 @@ export default function Services() {
             <ScrollTrigger onEnter={() => setIsWeldingInView(true)} onExit={() => setIsWeldingInView(false)}>
                 <MainBox padding="4% 0 0 0">
                     <Grow in={isWeldingInView} timeout={3000}>
-                        <LeftBox>
+                        <LeftBox sx={{ order: { xs: 2, sm: 0 } }}>
                             <Box
                                 component="img"
                                 src={welding}
