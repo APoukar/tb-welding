@@ -23,4 +23,16 @@ describe('MenuItem', () => {
     const btn = screen.getByText(/Služby/);
     expect(() => fireEvent.click(btn)).not.toThrow();
   });
+
+  it('uses primary color by default', () => {
+    render(<TbMenuItem text="Služby" ref={null as any} />);
+    const btn = screen.getByText(/Služby/);
+    expect(btn).toHaveClass('MuiButton-colorPrimary');
+  });
+
+  it('uses custom color when provided', () => {
+    render(<TbMenuItem text="Služby" ref={null as any} color="inherit" />);
+    const btn = screen.getByText(/Služby/);
+    expect(btn).toHaveClass('MuiButton-colorInherit');
+  });
 });

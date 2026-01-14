@@ -86,4 +86,79 @@ describe('Menu', () => {
         fireEvent.click(contactItem);
         expect(scrollMock).toHaveBeenCalled();
     });
+
+    it('renders hamburger menu icon', () => {
+        render(
+            <HeadlineContext.Provider value={GetHeadlineContextMock()}>
+                <Menu />
+            </HeadlineContext.Provider>
+        );
+
+        const hamburgerButton = screen.getByTestId('MenuIcon');
+        expect(hamburgerButton).toBeInTheDocument();
+    });
+
+    it('opens drawer when hamburger icon is clicked', () => {
+        render(
+            <HeadlineContext.Provider value={GetHeadlineContextMock()}>
+                <Menu />
+            </HeadlineContext.Provider>
+        );
+
+        const hamburgerButton = screen.getByTestId('MenuIcon').closest('button');
+        fireEvent.click(hamburgerButton!);
+
+        const drawer = screen.getByRole('presentation');
+        expect(drawer).toBeInTheDocument();
+    });
+
+    it('closes drawer when close button is clicked', () => {
+        render(
+            <HeadlineContext.Provider value={GetHeadlineContextMock()}>
+                <Menu />
+            </HeadlineContext.Provider>
+        );
+
+        const hamburgerButton = screen.getByTestId('MenuIcon').closest('button');
+        fireEvent.click(hamburgerButton!);
+
+        const closeButton = screen.getByTestId('CloseIcon').closest('button');
+        fireEvent.click(closeButton!);
+
+        expect(screen.queryByRole('presentation')).not.toBeInTheDocument();
+    });
+
+    it('drawer contains all menu items', () => {
+        render(
+            <HeadlineContext.Provider value={GetHeadlineContextMock()}>
+                <Menu />
+            </HeadlineContext.Provider>
+        );
+
+        const hamburgerButton = screen.getByTestId('MenuIcon').closest('button');
+        fireEvent.click(hamburgerButton!);
+
+        const drawer = screen.getByRole('presentation');
+        expect(drawer).toHaveTextContent('Služby');
+        expect(drawer).toHaveTextContent('O mně');
+        expect(drawer).toHaveTextContent('Kvalifikace');
+        expect(drawer).toHaveTextContent('Kontakt');
+    });
+
+    it('closes drawer when menu item is clicked', () => {
+        render(
+            <HeadlineContext.Provider value={GetHeadlineContextMock()}>
+                <Menu />
+            </HeadlineContext.Provider>
+        );
+
+        const hamburgerButton = screen.getByTestId('MenuIcon').closest('button');
+        fireEvent.click(hamburgerButton!);
+
+        const drawer = screen.getByRole('presentation');
+        const menuItem = drawer.querySelector('li');
+        fireEvent.click(menuItem!);
+
+        expect(screen.queryByRole('presentation')).not.toBeInTheDocument();
+    });
 });
