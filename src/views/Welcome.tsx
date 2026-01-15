@@ -32,7 +32,7 @@ export default function Welcome() {
                 sx={{
                     fontSize: { xs: '1.5em', sm: '1.8em', md: '2.5em' },
                     position: "absolute",
-                    top: { xs: "38%", sm: "40%" },
+                    top: { xs: "42%", sm: "40%", md: "50%" },
                     left: "50%",
                     transform: "translateX(-50%)",
                     textAlign: "center",
