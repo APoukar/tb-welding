@@ -54,19 +54,23 @@ export class HomePage {
   }
 
   async navigateToServices() {
-    await this.menuServices.click();
+    await this.menuServices.scrollIntoViewIfNeeded();
+    await this.menuServices.click({ force: true });
   }
 
   async navigateToAbout() {
-    await this.menuAbout.click();
+    await this.menuAbout.scrollIntoViewIfNeeded();
+    await this.menuAbout.click({ force: true });
   }
 
   async navigateToQualifications() {
-    await this.menuQualifications.click();
+    await this.menuQualifications.scrollIntoViewIfNeeded();
+    await this.menuQualifications.click({ force: true });
   }
 
   async navigateToContacts() {
-    await this.menuContacts.click();
+    await this.menuContacts.scrollIntoViewIfNeeded();
+    await this.menuContacts.click({ force: true });
   }
 
   async waitForAnimations() {

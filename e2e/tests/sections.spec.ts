@@ -33,10 +33,14 @@ test.describe('Services Section', () => {
   });
 
   test('should display MT service', async ({ page }) => {
-    // Scroll down to see MT section
-    await page.getByRole('heading', { name: 'MT – Magnetická prášková metoda' }).scrollIntoViewIfNeeded();
-    await homePage.waitForAnimations();
-    await expect(page.getByRole('heading', { name: 'MT – Magnetická prášková metoda' })).toBeVisible();
+    // Scroll progressively to trigger MT section animations
+    await page.evaluate(() => window.scrollTo(0, 800));
+    await page.waitForTimeout(500);
+    await page.evaluate(() => window.scrollTo(0, 1500));
+    await page.waitForTimeout(600);
+
+    const mtHeading = page.getByRole('heading', { name: 'MT – Magnetická prášková metoda' });
+    await expect(mtHeading).toBeVisible({ timeout: 10000 });
     await expect(page.getByAltText('Magnetická prášková metoda')).toBeVisible();
   });
 
