@@ -109,6 +109,8 @@ test.describe('Qualification Section', () => {
   });
 
   test('should display welding qualifications', async ({ page }) => {
-    await expect(page.getByText('EN ISO 9606').first()).toBeVisible();
+    const weldingQual = page.getByText('EN ISO 9606').first();
+    await weldingQual.scrollIntoViewIfNeeded();
+    await expect(weldingQual).toBeVisible();
   });
 });
