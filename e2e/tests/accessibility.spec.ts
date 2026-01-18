@@ -85,18 +85,37 @@ test.describe('Accessibility', () => {
     await expect(page.getByRole('heading', { name: 'Kontakt', exact: true })).toBeAttached();
   });
 
-  test('interactive elements should be focusable', async ({ page }) => {
+  test('interactive elements should be focusable - desktop', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
     await page.waitForLoadState('networkidle');
 
-    // Navigation buttons should be focusable - scroll into view first on mobile
-    await homePage.menuServices.scrollIntoViewIfNeeded();
+    // Skip on mobile viewports
+    test.skip(await homePage.isMobileViewport(), 'Desktop menu not visible on mobile');
+
+    // Desktop navigation buttons should be focusable
     await homePage.menuServices.focus();
     await expect(homePage.menuServices).toBeFocused();
 
-    await homePage.ctaButton.scrollIntoViewIfNeeded();
     await homePage.ctaButton.focus();
     await expect(homePage.ctaButton).toBeFocused();
+  });
+
+  test('interactive elements should be focusable - mobile', async ({ page }) => {
+    const homePage = new HomePage(page);
+    await homePage.goto();
+    await page.waitForLoadState('networkidle');
+
+    // Skip on desktop viewports
+    test.skip(!(await homePage.isMobileViewport()), 'Hamburger menu only visible on mobile');
+
+    // Hamburger button should be focusable
+    await homePage.hamburgerButton.focus();
+    await expect(homePage.hamburgerButton).toBeFocused();
+
+    // Open drawer and check drawer menu items
+    await homePage.openMobileDrawer();
+    await homePage.drawerMenuServices.focus();
+    await expect(homePage.drawerMenuServices).toBeFocused();
   });
 });

@@ -3,12 +3,21 @@ import { Page, Locator } from '@playwright/test';
 export class HomePage {
   readonly page: Page;
 
-  // Navigation
+  // Desktop Navigation
   readonly menuServices: Locator;
   readonly menuAbout: Locator;
   readonly menuQualifications: Locator;
   readonly menuContacts: Locator;
   readonly ctaButton: Locator;
+
+  // Mobile Navigation
+  readonly hamburgerButton: Locator;
+  readonly mobileDrawer: Locator;
+  readonly drawerCloseButton: Locator;
+  readonly drawerMenuServices: Locator;
+  readonly drawerMenuAbout: Locator;
+  readonly drawerMenuQualifications: Locator;
+  readonly drawerMenuContacts: Locator;
 
   // Section Headings
   readonly welcomeHeading: Locator;
@@ -27,12 +36,22 @@ export class HomePage {
   constructor(page: Page) {
     this.page = page;
 
-    // Navigation locators
-    this.menuServices = page.getByRole('button', { name: 'Služby' });
-    this.menuAbout = page.getByRole('button', { name: 'O mně' });
-    this.menuQualifications = page.getByRole('button', { name: 'Kvalifikace' });
-    this.menuContacts = page.getByRole('button', { name: 'Kontakt' });
+    // Desktop navigation locators (visible on sm and above, >= 600px)
+    this.menuServices = page.getByRole('button', { name: 'Služby' }).first();
+    this.menuAbout = page.getByRole('button', { name: 'O mně' }).first();
+    this.menuQualifications = page.getByRole('button', { name: 'Kvalifikace' }).first();
+    this.menuContacts = page.getByRole('button', { name: 'Kontakt' }).first();
     this.ctaButton = page.getByRole('link', { name: 'Napište mi' });
+
+    // Mobile navigation locators (visible on xs, < 600px)
+    // MUI IconButton renders as button with img inside
+    this.hamburgerButton = page.locator('.MuiIconButton-root').first();
+    this.mobileDrawer = page.locator('.MuiDrawer-root');
+    this.drawerCloseButton = this.mobileDrawer.locator('.MuiIconButton-root');
+    this.drawerMenuServices = this.mobileDrawer.getByRole('button', { name: 'Služby' });
+    this.drawerMenuAbout = this.mobileDrawer.getByRole('button', { name: 'O mně' });
+    this.drawerMenuQualifications = this.mobileDrawer.getByRole('button', { name: 'Kvalifikace' });
+    this.drawerMenuContacts = this.mobileDrawer.getByRole('button', { name: 'Kontakt' });
 
     // Section heading locators (use exact: true to avoid matching substrings)
     this.welcomeHeading = page.getByText('TB Welding').first();
@@ -53,24 +72,60 @@ export class HomePage {
     await this.page.goto('/');
   }
 
+  async isMobileViewport(): Promise<boolean> {
+    return await this.hamburgerButton.isVisible();
+  }
+
+  async openMobileDrawer() {
+    await this.hamburgerButton.click();
+    await this.mobileDrawer.waitFor({ state: 'visible' });
+  }
+
+  async closeMobileDrawer() {
+    if (await this.mobileDrawer.isVisible()) {
+      await this.drawerCloseButton.click();
+      await this.mobileDrawer.waitFor({ state: 'hidden' });
+    }
+  }
+
   async navigateToServices() {
-    await this.menuServices.scrollIntoViewIfNeeded();
-    await this.menuServices.click({ force: true });
+    if (await this.isMobileViewport()) {
+      await this.openMobileDrawer();
+      await this.drawerMenuServices.click();
+    } else {
+      await this.menuServices.scrollIntoViewIfNeeded();
+      await this.menuServices.click({ force: true });
+    }
   }
 
   async navigateToAbout() {
-    await this.menuAbout.scrollIntoViewIfNeeded();
-    await this.menuAbout.click({ force: true });
+    if (await this.isMobileViewport()) {
+      await this.openMobileDrawer();
+      await this.drawerMenuAbout.click();
+    } else {
+      await this.menuAbout.scrollIntoViewIfNeeded();
+      await this.menuAbout.click({ force: true });
+    }
   }
 
   async navigateToQualifications() {
-    await this.menuQualifications.scrollIntoViewIfNeeded();
-    await this.menuQualifications.click({ force: true });
+    if (await this.isMobileViewport()) {
+      await this.openMobileDrawer();
+      await this.drawerMenuQualifications.click();
+    } else {
+      await this.menuQualifications.scrollIntoViewIfNeeded();
+      await this.menuQualifications.click({ force: true });
+    }
   }
 
   async navigateToContacts() {
-    await this.menuContacts.scrollIntoViewIfNeeded();
-    await this.menuContacts.click({ force: true });
+    if (await this.isMobileViewport()) {
+      await this.openMobileDrawer();
+      await this.drawerMenuContacts.click();
+    } else {
+      await this.menuContacts.scrollIntoViewIfNeeded();
+      await this.menuContacts.click({ force: true });
+    }
   }
 
   async waitForAnimations() {

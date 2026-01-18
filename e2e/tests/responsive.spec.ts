@@ -77,12 +77,35 @@ test.describe('Responsive Design - Mobile', () => {
     await expect(homePage.welcomeHeading).toBeVisible();
   });
 
-  test('should allow scrolling to all sections', async ({ page }) => {
+  test('should display hamburger menu instead of desktop menu', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
     await page.waitForLoadState('networkidle');
 
-    // Navigate to contacts section
+    // Hamburger should be visible, desktop menu should be hidden
+    await expect(homePage.hamburgerButton).toBeVisible();
+    await expect(homePage.menuServices).not.toBeVisible();
+    await expect(homePage.ctaButton).not.toBeVisible();
+  });
+
+  test('should open mobile drawer with menu items', async ({ page }) => {
+    const homePage = new HomePage(page);
+    await homePage.goto();
+    await page.waitForLoadState('networkidle');
+
+    await homePage.openMobileDrawer();
+    await expect(homePage.drawerMenuServices).toBeVisible();
+    await expect(homePage.drawerMenuAbout).toBeVisible();
+    await expect(homePage.drawerMenuQualifications).toBeVisible();
+    await expect(homePage.drawerMenuContacts).toBeVisible();
+  });
+
+  test('should allow scrolling to all sections via drawer', async ({ page }) => {
+    const homePage = new HomePage(page);
+    await homePage.goto();
+    await page.waitForLoadState('networkidle');
+
+    // Navigate to contacts section via mobile drawer
     await homePage.navigateToContacts();
     await homePage.waitForAnimations();
 
