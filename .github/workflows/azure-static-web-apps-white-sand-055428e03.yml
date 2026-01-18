@@ -14,8 +14,22 @@ permissions:
   pull-requests: write
 
 jobs:
-  build_and_deploy_job:
+  wait_for_ci:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Wait for CI
+    steps:
+      - name: Wait for CI workflow to pass
+        uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          check-name: 'build (25.x)'
+          wait-interval: 10
+          allowed-conclusions: success
+
+  build_and_deploy_job:
+    needs: wait_for_ci
     runs-on: ubuntu-latest
     name: Build and Deploy Job
     steps:
