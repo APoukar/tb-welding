@@ -27,9 +27,9 @@ export default function Contacts() {
             <ContactLink href="mailto:tbwelding@seznam.cz">
                 tbwelding@seznam.cz
             </ContactLink>
-            <CenteredBodyTypography>
+            {/* <CenteredBodyTypography>
                 IČO: 000000000
-            </CenteredBodyTypography>
+            </CenteredBodyTypography> */}
             <CenteredBodyTypography margin="1% 0 0 0">
                 Zakázky po celé ČR - po domluvě
             </CenteredBodyTypography>

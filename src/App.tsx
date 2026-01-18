@@ -7,6 +7,7 @@ import Services from 'views/Services'
 import Welcome from 'views/Welcome'
 import Menu from 'views/Menu'
 import Qualification from 'views/Qualification'
+import Footer from 'views/Footer'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <AboutMe />
           <Qualification />
           <Contacts />
+          <Footer />
         </HeadlineProvider>
       </TbThemeProvider>
     </>

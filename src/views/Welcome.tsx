@@ -13,15 +13,16 @@ export default function Welcome() {
             />
             <Typography
                 variant="h1"
-                fontSize="4em"
                 fontWeight={700}
-                noWrap
                 lineHeight={1.5}
                 sx={{
+                    fontSize: { xs: '2em', sm: '2.5em', md: '4em' },
                     position: "absolute",
                     top: "25%",
                     left: "50%",
                     transform: "translateX(-50%)",
+                    textAlign: "center",
+                    width: { xs: '90%', sm: '80%', md: 'auto' },
                 }}
             >
                 KONTROLA SVARŮ A NDT ZKOUŠKY
@@ -29,10 +30,12 @@ export default function Welcome() {
             <Typography
                 variant="h2"
                 sx={{
+                    fontSize: { xs: '1.5em', sm: '1.8em', md: '2.5em' },
                     position: "absolute",
-                    top: "40%",
+                    top: { xs: "38%", sm: "40%" },
                     left: "50%",
                     transform: "translateX(-50%)",
+                    textAlign: "center",
                 }}
             >
                 UT • MT • VT
