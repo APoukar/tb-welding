@@ -7,9 +7,13 @@ test.describe('Navigation', () => {
   test.beforeEach(async ({ page }) => {
     homePage = new HomePage(page);
     await homePage.goto();
+    // Wait for React app to fully hydrate
+    await page.waitForLoadState('networkidle');
   });
 
   test('should display all navigation menu items', async () => {
+    // Scroll menu into view first (may be off-screen on mobile)
+    await homePage.menuServices.scrollIntoViewIfNeeded();
     await expect(homePage.menuServices).toBeVisible();
     await expect(homePage.menuAbout).toBeVisible();
     await expect(homePage.menuQualifications).toBeVisible();

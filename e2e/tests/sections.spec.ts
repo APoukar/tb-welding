@@ -5,6 +5,7 @@ test.describe('Welcome Section', () => {
   test('should display hero content', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     await expect(homePage.welcomeHeading).toBeVisible();
     await expect(page.getByRole('heading', { name: 'KONTROLA SVARŮ A NDT ZKOUŠKY' })).toBeVisible();
@@ -19,6 +20,7 @@ test.describe('Services Section', () => {
   test.beforeEach(async ({ page }) => {
     homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
     await homePage.navigateToServices();
     await homePage.waitForAnimations();
   });
@@ -33,6 +35,7 @@ test.describe('Services Section', () => {
   });
 
   test('should display MT service', async ({ page }) => {
+    test.setTimeout(45000); // Longer timeout for scroll animation tests
     // Scroll progressively to trigger MT section animations
     await page.evaluate(() => window.scrollTo(0, 800));
     await page.waitForTimeout(500);
@@ -45,6 +48,7 @@ test.describe('Services Section', () => {
   });
 
   test('should display VT service', async ({ page }) => {
+    test.setTimeout(45000); // Longer timeout for scroll animation tests
     // Scroll progressively to trigger all animations before VT
     await page.evaluate(() => window.scrollTo(0, 1000));
     await page.waitForTimeout(600);
@@ -59,6 +63,7 @@ test.describe('Services Section', () => {
   });
 
   test('should display welding service', async ({ page }) => {
+    test.setTimeout(45000); // Longer timeout for scroll animation tests
     // Scroll progressively through the page to trigger all animations
     await page.evaluate(() => window.scrollTo(0, 1000));
     await page.waitForTimeout(500);
@@ -82,6 +87,7 @@ test.describe('About Me Section', () => {
   test('should display personal information', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
     await homePage.navigateToAbout();
     await homePage.waitForAnimations();
 
@@ -96,6 +102,7 @@ test.describe('Qualification Section', () => {
   test.beforeEach(async ({ page }) => {
     homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
     await homePage.navigateToQualifications();
     await homePage.waitForAnimations();
   });

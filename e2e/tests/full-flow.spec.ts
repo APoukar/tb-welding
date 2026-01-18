@@ -7,6 +7,7 @@ test.describe('Full User Journey', () => {
 
     // 1. Load the page
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     // 2. Verify hero is visible
     await expect(homePage.welcomeHeading).toBeVisible();
@@ -40,6 +41,7 @@ test.describe('Full User Journey', () => {
 
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     // Navigate through all sections to trigger any lazy-loaded errors
     await homePage.navigateToServices();
@@ -68,6 +70,7 @@ test.describe('Full User Journey', () => {
   test('all service images should load', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
     await homePage.navigateToServices();
     await homePage.waitForAnimations();
 
@@ -103,7 +106,10 @@ test.describe('Full User Journey', () => {
   test('CTA email link should have proper mailto format', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
+    // Scroll CTA button into view on mobile
+    await homePage.ctaButton.scrollIntoViewIfNeeded();
     const href = await homePage.ctaButton.getAttribute('href');
 
     expect(href).toContain('mailto:tbwelding@seznam.cz');
@@ -117,6 +123,7 @@ test.describe('Error Handling', () => {
   test('should handle navigation gracefully', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     // Rapidly click through navigation
     await homePage.navigateToServices();

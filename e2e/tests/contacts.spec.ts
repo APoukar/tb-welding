@@ -7,6 +7,8 @@ test.describe('Contact Section', () => {
   test.beforeEach(async ({ page }) => {
     homePage = new HomePage(page);
     await homePage.goto();
+    // Wait for React app to fully hydrate
+    await page.waitForLoadState('networkidle');
     await homePage.navigateToContacts();
     await homePage.waitForAnimations();
   });

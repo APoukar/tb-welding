@@ -5,6 +5,8 @@ test.describe('Accessibility', () => {
   test('all images should have alt text', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    // Wait for React app to fully hydrate
+    await page.waitForLoadState('networkidle');
 
     // Scroll through the page to load all images
     await homePage.navigateToServices();
@@ -14,6 +16,7 @@ test.describe('Accessibility', () => {
 
     // Go back to top
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     const images = page.locator('img');
     const count = await images.count();
@@ -27,6 +30,7 @@ test.describe('Accessibility', () => {
   test('navigation should be keyboard accessible', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     // Tab to first menu item
     await page.keyboard.press('Tab');
@@ -47,6 +51,7 @@ test.describe('Accessibility', () => {
   test('links should have descriptive text', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
     await homePage.navigateToContacts();
     await homePage.waitForAnimations();
 
@@ -62,6 +67,7 @@ test.describe('Accessibility', () => {
   test('page should have main heading', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     const h1 = page.getByRole('heading', { level: 1 });
     await expect(h1.first()).toBeVisible();
@@ -70,6 +76,7 @@ test.describe('Accessibility', () => {
   test('section headings should be present', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     // Check that section headings exist (use exact match to avoid duplicates)
     await expect(page.getByRole('heading', { name: 'Služby', exact: true })).toBeAttached();
@@ -81,11 +88,14 @@ test.describe('Accessibility', () => {
   test('interactive elements should be focusable', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
-    // Navigation buttons should be focusable
+    // Navigation buttons should be focusable - scroll into view first on mobile
+    await homePage.menuServices.scrollIntoViewIfNeeded();
     await homePage.menuServices.focus();
     await expect(homePage.menuServices).toBeFocused();
 
+    await homePage.ctaButton.scrollIntoViewIfNeeded();
     await homePage.ctaButton.focus();
     await expect(homePage.ctaButton).toBeFocused();
   });

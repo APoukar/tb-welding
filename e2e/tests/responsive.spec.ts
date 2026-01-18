@@ -7,6 +7,7 @@ test.describe('Responsive Design - Desktop', () => {
   test('should display full navigation on desktop', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     await expect(homePage.menuServices).toBeVisible();
     await expect(homePage.menuAbout).toBeVisible();
@@ -18,6 +19,7 @@ test.describe('Responsive Design - Desktop', () => {
   test('should display hero section properly', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     await expect(homePage.heroImage).toBeVisible();
     await expect(page.getByRole('heading', { name: 'KONTROLA SVARŮ A NDT ZKOUŠKY' })).toBeVisible();
@@ -26,6 +28,7 @@ test.describe('Responsive Design - Desktop', () => {
   test('should display services with larger images', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
     await homePage.navigateToServices();
     await homePage.waitForAnimations();
 
@@ -44,7 +47,9 @@ test.describe('Responsive Design - Tablet', () => {
   test('should adapt layout for tablet', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
+    await homePage.menuServices.scrollIntoViewIfNeeded();
     await expect(homePage.menuServices).toBeVisible();
     await expect(homePage.welcomeHeading).toBeVisible();
   });
@@ -52,6 +57,7 @@ test.describe('Responsive Design - Tablet', () => {
   test('navigation should remain functional', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     await homePage.navigateToContacts();
     await homePage.waitForAnimations();
@@ -66,6 +72,7 @@ test.describe('Responsive Design - Mobile', () => {
   test('should display content on mobile', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     await expect(homePage.welcomeHeading).toBeVisible();
   });
@@ -73,6 +80,7 @@ test.describe('Responsive Design - Mobile', () => {
   test('should allow scrolling to all sections', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
 
     // Navigate to contacts section
     await homePage.navigateToContacts();
@@ -85,6 +93,7 @@ test.describe('Responsive Design - Mobile', () => {
   test('contact links should be accessible on mobile', async ({ page }) => {
     const homePage = new HomePage(page);
     await homePage.goto();
+    await page.waitForLoadState('networkidle');
     await homePage.navigateToContacts();
     await homePage.waitForAnimations();
 
