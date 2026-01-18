@@ -14,7 +14,7 @@ describe('Contacts', () => {
         expect(screen.getByText(/Kontakt/)).toBeInTheDocument();
         expect(screen.getByText(/TB Welding - Tomáš Bičej/)).toBeInTheDocument();
         expect(screen.getByText(/Ostrava/)).toBeInTheDocument();
-        // expect(screen.getByText(/IČO:/)).toBeInTheDocument();
+        expect(screen.getByText(/IČO:/)).toBeInTheDocument();
         expect(screen.getByText(/Zakázky po celé ČR/)).toBeInTheDocument();
     });
 
