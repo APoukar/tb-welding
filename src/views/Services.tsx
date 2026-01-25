@@ -115,6 +115,9 @@ export default function Services() {
                                     <BodyTypography component="li">
                                         povrchové a podpovrchové diskontinuity
                                     </BodyTypography>
+                                    <BodyTypography component="li">
+                                        vyhodnocení dle norem
+                                    </BodyTypography>
                                 </BodyTypography>
                                 <ListHeadline padding="4% 0 0 0">Použití:</ListHeadline>
                                 <BodyTypography component="ul">
@@ -152,6 +155,9 @@ export default function Services() {
                                     </BodyTypography>
                                     <BodyTypography component="li">
                                         značení a shoda s výkresovou dokumentací a normami
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
+                                        vyhodnocení dle norem
                                     </BodyTypography>
                                 </BodyTypography>
                                 <ListHeadline padding="4% 0 0 0">Použití:</ListHeadline>
