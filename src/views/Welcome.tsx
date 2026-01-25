@@ -25,14 +25,16 @@ export default function Welcome() {
                     width: { xs: '90%', sm: '80%', md: 'auto' },
                 }}
             >
-                KONTROLA SVARŮ A NDT ZKOUŠKY
+                KONTROLA SVARŮ{' '}
+                <Box component="br" sx={{ display: { xs: 'block', sm: 'block', md: 'none', lg: 'block' } }} />
+                A NDT ZKOUŠKY
             </Typography>
             <Typography
                 variant="h2"
                 sx={{
                     fontSize: { xs: '1.5em', sm: '1.8em', md: '2.5em' },
                     position: "absolute",
-                    top: { xs: "42%", sm: "40%", md: "60%" },
+                    top: { xs: "46%", sm: "46%", md: "70%", lg: '55%'  },
                     left: "50%",
                     transform: "translateX(-50%)",
                     textAlign: "center",
