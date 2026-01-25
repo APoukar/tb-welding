@@ -36,6 +36,6 @@ describe('Qualification', () => {
       </HeadlineContext.Provider>
     );
     expect(qualificationRef.current).toBeTruthy();
-    expect(qualificationRef.current).toBeInstanceOf(HTMLDivElement);
+    expect(qualificationRef.current.tagName).toBe('SECTION');
   });
 });
