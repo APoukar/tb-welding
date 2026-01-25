@@ -1,6 +1,21 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../pages/home.page';
 
+// Helper function to check if two boxes overlap
+function boxesOverlap(
+  box1: { x: number; y: number; width: number; height: number } | null,
+  box2: { x: number; y: number; width: number; height: number } | null
+): boolean {
+  if (!box1 || !box2) return false;
+
+  return !(
+    box1.x + box1.width < box2.x ||   // box1 is left of box2
+    box2.x + box2.width < box1.x ||   // box2 is left of box1
+    box1.y + box1.height < box2.y ||  // box1 is above box2
+    box2.y + box2.height < box1.y     // box2 is above box1
+  );
+}
+
 test.describe('Responsive Design - Desktop', () => {
   test.use({ viewport: { width: 1280, height: 800 } });
 
@@ -123,4 +138,28 @@ test.describe('Responsive Design - Mobile', () => {
     await expect(homePage.phoneLink).toBeEnabled();
     await expect(homePage.emailLink).toBeEnabled();
   });
+});
+
+test.describe('Heading Overlap Tests', () => {
+  const viewportWidths = [375, 600, 768, 900, 1024, 1280, 1440];
+
+  for (const width of viewportWidths) {
+    test(`hero headings should not overlap at ${width}px width`, async ({ page }) => {
+      await page.setViewportSize({ width, height: 800 });
+      await page.goto('/');
+      await page.waitForLoadState('networkidle');
+
+      // Use specific text to target only the hero headings
+      const h1 = page.getByRole('heading', { name: /KONTROLA SVARŮ/ });
+      const h2 = page.getByRole('heading', { name: 'UT • MT • VT' });
+
+      await expect(h1).toBeVisible();
+      await expect(h2).toBeVisible();
+
+      const h1Box = await h1.boundingBox();
+      const h2Box = await h2.boundingBox();
+
+      expect(boxesOverlap(h1Box, h2Box)).toBe(false);
+    });
+  }
 });
