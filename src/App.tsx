@@ -14,12 +14,16 @@ function App() {
     <>
       <TbThemeProvider>
         <HeadlineProvider>
-          <Welcome />
-          <Menu />
-          <Services />
-          <AboutMe />
-          <Qualification />
-          <Contacts />
+          <header>
+            <Welcome />
+            <Menu />
+          </header>
+          <main>
+            <Services />
+            <AboutMe />
+            <Qualification />
+            <Contacts />
+          </main>
           <Footer />
         </HeadlineProvider>
       </TbThemeProvider>

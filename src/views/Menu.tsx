@@ -25,10 +25,16 @@ function Menu() {
     };
 
     return (
-        <Box display="flex" justifyContent="space-between" margin={4}>
+        <Box component="nav" aria-label="Hlavní navigace" display="flex" justifyContent="space-between" margin={4}>
             {/* Hamburger icon - mobile only */}
             <Box sx={{ display: { xs: "flex", sm: "none" }, flex: 1, justifyContent: "flex-end", alignItems: "center" }}>
-                <IconButton onClick={handleDrawerToggle} sx={{ color: "text.primary" }}>
+                <IconButton
+                    onClick={handleDrawerToggle}
+                    sx={{ color: "text.primary" }}
+                    aria-expanded={drawerOpen}
+                    aria-controls="mobile-menu-drawer"
+                    aria-label={drawerOpen ? "Zavřít menu" : "Otevřít menu"}
+                >
                     <MenuIcon />
                 </IconButton>
             </Box>
@@ -39,10 +45,11 @@ function Menu() {
                 open={drawerOpen}
                 onClose={handleDrawerToggle}
                 sx={{ display: { xs: "block", sm: "none" } }}
+                id="mobile-menu-drawer"
             >
-                <Box sx={{ width: 250, padding: 2 }}>
+                <Box component="nav" aria-label="Mobilní navigace" sx={{ width: 250, padding: 2 }}>
                     <Box display="flex" justifyContent="flex-end">
-                        <IconButton onClick={handleDrawerToggle}>
+                        <IconButton onClick={handleDrawerToggle} aria-label="Zavřít menu">
                             <CloseIcon />
                         </IconButton>
                     </Box>
