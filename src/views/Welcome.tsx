@@ -40,7 +40,7 @@ export default function Welcome() {
                     textAlign: "center",
                 }}
             >
-                UT • MT • VT
+                VT • MT • UT
             </Typography>
             <Typography
                 sx={{
