@@ -16,7 +16,7 @@ export default function Welcome() {
                 fontWeight={700}
                 lineHeight={1.5}
                 sx={{
-                    fontSize: { xs: '2em', sm: '2.5em', md: '4em' },
+                    fontSize: { xs: '2em', sm: '2.5em', md: '3.5em' },
                     position: "absolute",
                     top: "25%",
                     left: "50%",
@@ -25,20 +25,24 @@ export default function Welcome() {
                     width: { xs: '90%', sm: '80%', md: 'auto' },
                 }}
             >
-                KONTROLA SVARŮ A NDT ZKOUŠKY
+                NDT ZKOUŠKY
+                <br />
+                A
+                <br />
+                SVAŘOVÁNÍ
             </Typography>
             <Typography
                 variant="h2"
                 sx={{
                     fontSize: { xs: '1.5em', sm: '1.8em', md: '2.5em' },
                     position: "absolute",
-                    top: { xs: "42%", sm: "40%", md: "50%" },
+                    top: { xs: "46%", sm: "50%", md: "70%", lg: '65%'  },
                     left: "50%",
                     transform: "translateX(-50%)",
                     textAlign: "center",
                 }}
             >
-                UT • MT • VT
+                VT • MT • UT
             </Typography>
             <Typography
                 sx={{

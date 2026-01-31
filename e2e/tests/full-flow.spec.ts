@@ -11,7 +11,7 @@ test.describe('Full User Journey', () => {
 
     // 2. Verify hero is visible
     await expect(homePage.welcomeHeading).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'KONTROLA SVARŮ A NDT ZKOUŠKY' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /NDT ZKOUŠKY.*SVAŘOVÁNÍ/s })).toBeVisible();
 
     // 3. Navigate through all sections
     await homePage.navigateToServices();
@@ -75,7 +75,7 @@ test.describe('Full User Journey', () => {
     await homePage.waitForAnimations();
 
     // Check UT image
-    const utImage = page.getByAltText('Ultrazvuková kontrola');
+    const utImage = page.getByAltText('Vizuální kontrola');
     await expect(utImage).toBeVisible();
 
     // Scroll to MT - scroll incrementally to trigger animations
@@ -89,7 +89,7 @@ test.describe('Full User Journey', () => {
     // Scroll to VT
     await page.evaluate(() => window.scrollBy(0, 800));
     await homePage.waitForAnimations();
-    const vtImage = page.getByAltText('Vizuální kontrola');
+    const vtImage = page.getByAltText('Ultrazvuková kontrola');
     await vtImage.scrollIntoViewIfNeeded();
     await homePage.waitForAnimations();
     await expect(vtImage).toBeVisible();

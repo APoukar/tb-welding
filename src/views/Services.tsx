@@ -23,27 +23,28 @@ export default function Services() {
             <CenteredBodyTypography margin="auto 10%">
                 Kontroly provádím jako certifikovaný technik NDT Level II – multisektor
                 dle ČSN EN ISO 9712:2022, v souladu s požadavky norem, projektové dokumentace
-                a kontrolních specifikací.
+                a kontrolních specifikací. Veškeré NDT kontroly provádím s vlastním profesionálním
+                vybavením (UT, MT, VT), což umožňuje rychlou realizaci zakázek bez zbytečných prodlev.
             </CenteredBodyTypography>
 
-            {/* UT – Ultrazvuková kontrola */}
-            <ScrollTrigger onEnter={() => setIsUTInView(true)} onExit={() => setIsUTInView(false)}>
+            {/* VT – Vizuální kontrola */}
+            <ScrollTrigger onEnter={() => setIsVTInView(true)} onExit={() => setIsVTInView(false)}>
                 <MainBox padding="4% 0 0 0">
-                    <Grow in={isUTInView} timeout={2000}>
+                    <Grow in={isVTInView} timeout={2000}>
                         <LeftBox>
                             <Box padding={3}>
-                                <TbH3 variant="h3">UT – Ultrazvuková kontrola</TbH3>
+                                <TbH3 variant="h3">VT – Vizuální kontrola</TbH3>
                                 <TbH4 variant="h4">Level II</TbH4>
                                 <ListHeadline>Rozsah:</ListHeadline>
                                 <BodyTypography component="ul">
                                     <BodyTypography component="li">
-                                        vnitřní vady svarů (necelistvosti, póry, vměstky)
+                                        vzhled a geometrie svarů
                                     </BodyTypography>
                                     <BodyTypography component="li">
-                                        nedokonalé provaření
+                                        povrchové vady
                                     </BodyTypography>
                                     <BodyTypography component="li">
-                                        měření tloušťky materiálu
+                                        značení a shoda s výkresovou dokumentací a normami
                                     </BodyTypography>
                                     <BodyTypography component="li">
                                         vyhodnocení dle norem
@@ -52,21 +53,24 @@ export default function Services() {
                                 <ListHeadline padding="4% 0 0 0">Použití:</ListHeadline>
                                 <BodyTypography component="ul">
                                     <BodyTypography component="li">
-                                        plechy, profily, trubky
+                                        svary
                                     </BodyTypography>
                                     <BodyTypography component="li">
-                                        ocelové konstrukce, tlakové i netlakové díly dle dokumentace
+                                        konstrukční celky
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
+                                        montáže a opravy
                                     </BodyTypography>
                                 </BodyTypography>
                             </Box>
                         </LeftBox>
                     </Grow>
-                    <Grow in={isUTInView} timeout={3000}>
+                    <Grow in={isVTInView} timeout={3000}>
                         <RightBox>
                             <Box
                                 component="img"
-                                src={ut}
-                                alt="Ultrazvuková kontrola"
+                                src={vt}
+                                alt="Vizuální kontrola"
                                 borderRadius={8}
                                 sx={{
                                     width: "100%",
@@ -115,6 +119,9 @@ export default function Services() {
                                     <BodyTypography component="li">
                                         povrchové a podpovrchové diskontinuity
                                     </BodyTypography>
+                                    <BodyTypography component="li">
+                                        vyhodnocení dle norem
+                                    </BodyTypography>
                                 </BodyTypography>
                                 <ListHeadline padding="4% 0 0 0">Použití:</ListHeadline>
                                 <BodyTypography component="ul">
@@ -134,47 +141,47 @@ export default function Services() {
                 </MainBox>
             </ScrollTrigger>
 
-            {/* VT – Vizuální kontrola */}
-            <ScrollTrigger onEnter={() => setIsVTInView(true)} onExit={() => setIsVTInView(false)}>
+                        {/* UT – Ultrazvuková kontrola */}
+            <ScrollTrigger onEnter={() => setIsUTInView(true)} onExit={() => setIsUTInView(false)}>
                 <MainBox padding="4% 0 0 0">
-                    <Grow in={isVTInView} timeout={2000}>
+                    <Grow in={isUTInView} timeout={2000}>
                         <LeftBox>
                             <Box padding={3}>
-                                <TbH3 variant="h3">VT – Vizuální kontrola</TbH3>
+                                <TbH3 variant="h3">UT – Ultrazvuková kontrola</TbH3>
                                 <TbH4 variant="h4">Level II</TbH4>
                                 <ListHeadline>Rozsah:</ListHeadline>
                                 <BodyTypography component="ul">
                                     <BodyTypography component="li">
-                                        vzhled a geometrie svarů
+                                        vnitřní vady svarů (necelistvosti, póry, vměstky)
                                     </BodyTypography>
                                     <BodyTypography component="li">
-                                        povrchové vady
+                                        nedokonalé provaření
                                     </BodyTypography>
                                     <BodyTypography component="li">
-                                        značení a shoda s výkresovou dokumentací a normami
+                                        měření tloušťky materiálu
+                                    </BodyTypography>
+                                    <BodyTypography component="li">
+                                        vyhodnocení dle norem
                                     </BodyTypography>
                                 </BodyTypography>
                                 <ListHeadline padding="4% 0 0 0">Použití:</ListHeadline>
                                 <BodyTypography component="ul">
                                     <BodyTypography component="li">
-                                        svary
+                                        plechy, profily, trubky
                                     </BodyTypography>
                                     <BodyTypography component="li">
-                                        konstrukční celky
-                                    </BodyTypography>
-                                    <BodyTypography component="li">
-                                        montáže a opravy
+                                        ocelové konstrukce, tlakové i netlakové díly dle dokumentace
                                     </BodyTypography>
                                 </BodyTypography>
                             </Box>
                         </LeftBox>
                     </Grow>
-                    <Grow in={isVTInView} timeout={3000}>
+                    <Grow in={isUTInView} timeout={3000}>
                         <RightBox>
                             <Box
                                 component="img"
-                                src={vt}
-                                alt="Vizuální kontrola"
+                                src={ut}
+                                alt="Ultrazvuková kontrola"
                                 borderRadius={8}
                                 sx={{
                                     width: "100%",

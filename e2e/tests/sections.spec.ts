@@ -8,8 +8,8 @@ test.describe('Welcome Section', () => {
     await page.waitForLoadState('networkidle');
 
     await expect(homePage.welcomeHeading).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'KONTROLA SVARŮ A NDT ZKOUŠKY' })).toBeVisible();
-    await expect(page.getByText('UT • MT • VT')).toBeVisible();
+    await expect(page.getByRole('heading', { name: /NDT ZKOUŠKY.*SVAŘOVÁNÍ/s })).toBeVisible();
+    await expect(page.getByText('VT • MT • UT')).toBeVisible();
     await expect(homePage.heroImage).toBeVisible();
   });
 });
@@ -29,9 +29,9 @@ test.describe('Services Section', () => {
     await expect(homePage.servicesHeading).toBeVisible();
   });
 
-  test('should display UT service', async ({ page }) => {
-    await expect(page.getByRole('heading', { name: 'UT – Ultrazvuková kontrola' })).toBeVisible();
-    await expect(page.getByAltText('Ultrazvuková kontrola')).toBeVisible();
+  test('should display VT service', async ({ page }) => {
+    await expect(page.getByRole('heading', { name: 'VT – Vizuální kontrola' })).toBeVisible();
+    await expect(page.getByAltText('Vizuální kontrola')).toBeVisible();
   });
 
   test('should display MT service', async ({ page }) => {
@@ -47,9 +47,9 @@ test.describe('Services Section', () => {
     await expect(page.getByAltText('Magnetická prášková metoda')).toBeVisible();
   });
 
-  test('should display VT service', async ({ page }) => {
+  test('should display UT service', async ({ page }) => {
     test.setTimeout(45000); // Longer timeout for scroll animation tests
-    // Scroll progressively to trigger all animations before VT
+    // Scroll progressively to trigger all animations before UT
     await page.evaluate(() => window.scrollTo(0, 1000));
     await page.waitForTimeout(600);
     await page.evaluate(() => window.scrollTo(0, 2000));
@@ -57,9 +57,9 @@ test.describe('Services Section', () => {
     await page.evaluate(() => window.scrollTo(0, 3000));
     await page.waitForTimeout(600);
 
-    const vtHeading = page.getByRole('heading', { name: 'VT – Vizuální kontrola' });
-    await expect(vtHeading).toBeVisible({ timeout: 10000 });
-    await expect(page.getByAltText('Vizuální kontrola')).toBeVisible();
+    const utHeading = page.getByRole('heading', { name: 'UT – Ultrazvuková kontrola' });
+    await expect(utHeading).toBeVisible({ timeout: 10000 });
+    await expect(page.getByAltText('Ultrazvuková kontrola')).toBeVisible();
   });
 
   test('should display welding service', async ({ page }) => {

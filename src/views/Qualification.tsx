@@ -42,13 +42,13 @@ export default function Qualification() {
                         </QualificationHeading>
                         <RightBox>
                             <RightBoxWithBP>
-                                <BodyTypography>EN ISO 9712:2022 – UT Level II (multisektor)</BodyTypography>
+                                <BodyTypography>EN ISO 9712:2022 – VT Level II (multisektor)</BodyTypography>
                             </RightBoxWithBP>
                             <RightBoxWithBP>
                                 <BodyTypography>EN ISO 9712:2022 – MT Level II (multisektor)</BodyTypography>
                             </RightBoxWithBP>
                             <RightBoxWithBP>
-                                <BodyTypography>EN ISO 9712:2022 – VT Level II (multisektor)</BodyTypography>
+                                <BodyTypography>EN ISO 9712:2022 – UT Level II (multisektor)</BodyTypography>
                             </RightBoxWithBP>
                         </RightBox>
                     </TypographyBox>
