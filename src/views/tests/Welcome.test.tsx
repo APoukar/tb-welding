@@ -4,7 +4,8 @@ import Welcome from 'views/Welcome'
 describe('Welcome', () => {
   it('renders hero headings', () => {
     render(<Welcome />);
-    expect(screen.getByText(/KONTROLA SVARŮ A NDT ZKOUŠKY/)).toBeInTheDocument();
+    expect(screen.getByText(/KONTROLA SVARŮ/)).toBeInTheDocument();
+    expect(screen.getByText(/NDT ZKOUŠKY/)).toBeInTheDocument();
     expect(screen.getByText(/VT • MT • UT/)).toBeInTheDocument();
     expect(screen.getByText(/TB Welding/)).toBeInTheDocument();
   })
