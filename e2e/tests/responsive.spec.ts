@@ -47,7 +47,7 @@ test.describe('Responsive Design - Desktop', () => {
     await homePage.navigateToServices();
     await homePage.waitForAnimations();
 
-    const serviceImage = page.getByAltText('Ultrazvuková kontrola');
+    const serviceImage = page.getByAltText('Vizuální kontrola');
     await expect(serviceImage).toBeVisible();
 
     const box = await serviceImage.boundingBox();
@@ -151,7 +151,7 @@ test.describe('Heading Overlap Tests', () => {
 
       // Use specific text to target only the hero headings
       const h1 = page.getByRole('heading', { name: /KONTROLA SVARŮ/ });
-      const h2 = page.getByRole('heading', { name: 'UT • MT • VT' });
+      const h2 = page.getByRole('heading', { name: 'VT • MT • UT' });
 
       await expect(h1).toBeVisible();
       await expect(h2).toBeVisible();

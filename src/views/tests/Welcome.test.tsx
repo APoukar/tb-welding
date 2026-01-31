@@ -5,7 +5,7 @@ describe('Welcome', () => {
   it('renders hero headings', () => {
     render(<Welcome />);
     expect(screen.getByText(/KONTROLA SVARŮ A NDT ZKOUŠKY/)).toBeInTheDocument();
-    expect(screen.getByText(/UT • MT • VT/)).toBeInTheDocument();
+    expect(screen.getByText(/VT • MT • UT/)).toBeInTheDocument();
     expect(screen.getByText(/TB Welding/)).toBeInTheDocument();
   })
 

@@ -75,7 +75,7 @@ test.describe('Full User Journey', () => {
     await homePage.waitForAnimations();
 
     // Check UT image
-    const utImage = page.getByAltText('Ultrazvuková kontrola');
+    const utImage = page.getByAltText('Vizuální kontrola');
     await expect(utImage).toBeVisible();
 
     // Scroll to MT - scroll incrementally to trigger animations
@@ -89,7 +89,7 @@ test.describe('Full User Journey', () => {
     // Scroll to VT
     await page.evaluate(() => window.scrollBy(0, 800));
     await homePage.waitForAnimations();
-    const vtImage = page.getByAltText('Vizuální kontrola');
+    const vtImage = page.getByAltText('Ultrazvuková kontrola');
     await vtImage.scrollIntoViewIfNeeded();
     await homePage.waitForAnimations();
     await expect(vtImage).toBeVisible();
