@@ -23,7 +23,8 @@ export default function Services() {
             <CenteredBodyTypography margin="auto 10%">
                 Kontroly provádím jako certifikovaný technik NDT Level II – multisektor
                 dle ČSN EN ISO 9712:2022, v souladu s požadavky norem, projektové dokumentace
-                a kontrolních specifikací.
+                a kontrolních specifikací. Veškeré NDT kontroly provádím s vlastním profesionálním
+                vybavením (UT, MT, VT), což umožňuje rychlou realizaci zakázek bez zbytečných prodlev.
             </CenteredBodyTypography>
 
             {/* VT – Vizuální kontrola */}
@@ -82,7 +83,7 @@ export default function Services() {
                     </Grow>
                 </MainBox>
             </ScrollTrigger>
-            
+
             {/* MT – Magnetická prášková metoda */}
             <ScrollTrigger onEnter={() => setIsMTInView(true)} onExit={() => setIsMTInView(false)}>
                 <MainBox padding="4% 0 0 0">
