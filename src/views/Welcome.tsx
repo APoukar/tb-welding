@@ -25,11 +25,11 @@ export default function Welcome() {
                     width: { xs: '90%', sm: '80%', md: 'auto' },
                 }}
             >
-                KONTROLA SVARŮ
+                NDT ZKOUŠKY
                 <br />
                 A
                 <br />
-                NDT ZKOUŠKY
+                SVAŘOVÁNÍ
             </Typography>
             <Typography
                 variant="h2"

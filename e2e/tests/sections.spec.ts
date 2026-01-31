@@ -8,7 +8,7 @@ test.describe('Welcome Section', () => {
     await page.waitForLoadState('networkidle');
 
     await expect(homePage.welcomeHeading).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'KONTROLA SVARŮ A NDT ZKOUŠKY' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /NDT ZKOUŠKY.*SVAŘOVÁNÍ/s })).toBeVisible();
     await expect(page.getByText('VT • MT • UT')).toBeVisible();
     await expect(homePage.heroImage).toBeVisible();
   });

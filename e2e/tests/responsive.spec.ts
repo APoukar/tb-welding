@@ -37,7 +37,7 @@ test.describe('Responsive Design - Desktop', () => {
     await page.waitForLoadState('networkidle');
 
     await expect(homePage.heroImage).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'KONTROLA SVARŮ A NDT ZKOUŠKY' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /NDT ZKOUŠKY.*SVAŘOVÁNÍ/s })).toBeVisible();
   });
 
   test('should display services with larger images', async ({ page }) => {
@@ -150,7 +150,7 @@ test.describe('Heading Overlap Tests', () => {
       await page.waitForLoadState('networkidle');
 
       // Use specific text to target only the hero headings
-      const h1 = page.getByRole('heading', { name: /KONTROLA SVARŮ/ });
+      const h1 = page.getByRole('heading', { name: /NDT ZKOUŠKY/ });
       const h2 = page.getByRole('heading', { name: 'VT • MT • UT' });
 
       await expect(h1).toBeVisible();

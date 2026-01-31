@@ -11,7 +11,7 @@ test.describe('Full User Journey', () => {
 
     // 2. Verify hero is visible
     await expect(homePage.welcomeHeading).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'KONTROLA SVARŮ A NDT ZKOUŠKY' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /NDT ZKOUŠKY.*SVAŘOVÁNÍ/s })).toBeVisible();
 
     // 3. Navigate through all sections
     await homePage.navigateToServices();
